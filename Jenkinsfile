@@ -3,12 +3,12 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                echo 'Installing Python dependencies...'
-                // Install dependencies from requirements.txt
-                sh 'pip3 install -r requirements.txt'
-            }
-        }
+    steps {
+        echo 'Installing Python dependencies...'
+        sh 'pip3 install --break-system-packages -r requirements.txt'
+    }
+}
+
 
         stage('Test') {
             steps {
